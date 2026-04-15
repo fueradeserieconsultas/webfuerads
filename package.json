@@ -1,0 +1,24 @@
+{
+  "name": "fuera-de-serie",
+  "version": "1.0.0",
+  "description": "Landing page segura para tienda Fuera de Serie",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static site'",
+    "start": "netlify dev"
+  },
+  "keywords": [
+    "ecommerce",
+    "netlify",
+    "serverless"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
