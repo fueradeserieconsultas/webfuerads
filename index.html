@@ -928,6 +928,20 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
             div.textContent = text;
             return div.innerHTML;
         }
+        function createSafeElement(tag, className = '', textContent = '') {
+            const element = document.createElement(tag);
+            
+            if (className) {
+                element.className = className;
+            }
+            
+            if (textContent) {
+                element.textContent = textContent;
+            }
+            
+            return element;
+        }
+        
 
         // Función para validar URLs de imágenes
         function isValidImageUrl(url) {
