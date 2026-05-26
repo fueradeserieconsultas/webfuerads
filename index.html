@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuera de Serie - Colección Premium</title>
     <!-- Nuevas fuentes: Cinzel para títulos, Poppins para texto -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://docs.google.com;">
+    <meta http-equiv="Content-Security-Policy" content="
+default-src 'self';
+script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+img-src 'self' data: https: blob:;
+connect-src 'self' https://docs.google.com https://*.googleusercontent.com https://wa.me https://*.netlify.app;
+">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" integrity="sha384-w0gYDjmVMxGd4gLXevRaKhS5KuKVWVZHlJgWhNm8e+LiGlH3Y/vdFfYFJKiKRIJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHojZ5/cPumQ5q2HDITnrsYFCc/n8EMudwFmOn2xo+8kcT1zKgDaIvvXe6yNfUSf4JsKFQw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Variables CSS */
         :root {
@@ -1461,4 +1468,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     </script>
 </body>
-</html>
+</html>corrijo CSP y font awesome
