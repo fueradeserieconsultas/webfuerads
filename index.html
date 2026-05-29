@@ -1,10 +1,46 @@
-// Calcular cuánto ya agregó al carrito
-const alreadyInCart = cart
-    .filter(item => item.id === productId && item.size === size)
-    .reduce((sum, item) => sum + item.quantity, 0);
+function addToCart(productId, size, quantity, buttonElement) {
 
-// Verificar stock disponible
-if (alreadyInCart + quantity > product.stock) {
-    alert(`Solo quedan ${product.stock} unidades disponibles.`);
-    return;
+    const product = products.find(p => p.id === productId);
+
+    if (!product) return;
+
+    // Verificar si el producto tiene stock
+    if (product.stock <= 0) {
+        alert('Este producto no está disponible.');
+        return;
+    }
+
+    // Calcular cuánto ya agregó al carrito
+    const alreadyInCart = cart
+        .filter(item => item.id === productId && item.size === size)
+        .reduce((sum, item) => sum + item.quantity, 0);
+
+    // Verificar stock disponible
+    if (alreadyInCart + quantity > product.stock) {
+        alert(`Solo quedan ${product.stock} unidades disponibles.`);
+        return;
+    }
+
+    const existingItemIndex = cart.findIndex(
+        item => item.id === productId && item.size === size
+    );
+
+    if (existingItemIndex > -1) {
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        cart.push({ ...product, size, quantity });
+    }
+
+    renderOrderSummary();
+
+    // Animación del botón
+    const originalText = buttonElement.textContent;
+
+    buttonElement.classList.add('added');
+    buttonElement.textContent = 'Agregado ✓';
+
+    setTimeout(() => {
+        buttonElement.classList.remove('added');
+        buttonElement.textContent = originalText;
+    }, 1500);
 }
