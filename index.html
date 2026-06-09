@@ -311,6 +311,79 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
             box-shadow: 0 2px 8px var(--shadow-light);
         }
 
+        .size-chart-section {
+            padding: 60px 0;
+            background-color: var(--white);
+            border-radius: var(--border-radius-soft);
+            box-shadow: 0 4px 12px var(--shadow-light);
+            margin-bottom: 60px;
+        }
+
+        .size-chart-section .size-chart-inner {
+            display: grid;
+            grid-template-columns: minmax(260px, 1.4fr) minmax(260px, 1fr);
+            align-items: start;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .size-chart-section h2 {
+            font-size: 2.6rem;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .size-chart-section p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            max-width: 620px;
+            font-weight: 300;
+        }
+
+        .size-chart-section .size-chart-image {
+            width: 100%;
+            max-width: 580px;
+            border-radius: var(--border-radius-soft);
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow-light);
+            margin: 0 auto;
+        }
+
+        .size-chart-section .size-chart-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .size-chart-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .size-chart-section th,
+        .size-chart-section td {
+            padding: 12px 15px;
+            border: 1px solid #e4e4e4;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .size-chart-section th {
+            background-color: #f5f9fd;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .size-chart-section tbody tr:hover {
+            background-color: #fbfbfb;
+        }
+
 
         .product-grid {
             display: grid;
@@ -628,6 +701,9 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
             .order-total {
                 font-size: 1.5rem;
             }
+            .size-chart-inner {
+                grid-template-columns: 1fr;
+            }
 
             .whatsapp-float, #scroll-to-top {
                 bottom: 20px;
@@ -767,7 +843,8 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
             <nav class="nav-menu">
                 <ul>
                     <li><a href="#hero-section">Inicio</a></li>
-                    <li><a href="#products-section">Colección</a></li>
+                    <li><a href="#products-section">Colecciones</a></li>
+                    <li><a href="#size-chart-section">Tabla de talles</a></li>
                     <li><a href="#contact-section">Contacto</a></li>
                 </ul>
             </nav>
@@ -815,11 +892,11 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
 
        <section id="products-section" class="products-section">
     <div class="container">
-        <h2>Nuestra Colección</h2>
+        <h2>Nuestras Colecciones</h2>
 
         <!-- Filtros de productos -->
         <div class="product-filters">
-            <button class="filter-btn active" data-filter="coleccion">Colección</button>
+            <button class="filter-btn active" data-filter="coleccion">Cápsula Mundial</button>
             <button class="filter-btn" data-filter="liquidacion">Liquidación</button>
             <button class="filter-btn" data-filter="all">Todos</button>
         </div>
@@ -829,6 +906,48 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
         </div>
     </div>
 </section>
+        <section id="size-chart-section" class="size-chart-section container">
+            <div class="size-chart-inner">
+                <div>
+                    <h2>Tabla de talles</h2>
+                    <p>Consultá nuestra guía de talles para encontrar la medida ideal. Las tablas te ayudan a elegir con confianza antes de confirmar tu pedido.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Talle</th>
+                                <th>Ancho</th>
+                                <th>Largo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>S</td>
+                                <td>48 cm</td>
+                                <td>68 cm</td>
+                            </tr>
+                            <tr>
+                                <td>M</td>
+                                <td>51 cm</td>
+                                <td>70 cm</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
+                                <td>54 cm</td>
+                                <td>72 cm</td>
+                            </tr>
+                            <tr>
+                                <td>XL</td>
+                                <td>57 cm</td>
+                                <td>74 cm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="size-chart-image">
+                    <img src="img/paisesbajoshome.jpg" alt="Tabla de talles - ejemplo de prenda">
+                </div>
+            </div>
+        </section>
         <section class="order-summary-section">
             <div class="container">
                 <h2>Tu Pedido</h2>
