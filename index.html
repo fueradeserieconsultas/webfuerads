@@ -864,7 +864,7 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
                     <div class="slide-content">
                         <h2>La pasión se lleva puesta</h2>
                         <p>Ya llegó nuestra nueva colección de remeras inspiradas en el Mundial. Elegí la tuya y llevá el fútbol a todos lados.</p>
-                        <a href="#products-section" class="btn" onclick="renderProducts('cápsulamundial')">Ver Cápsula Mundial</a>
+                        <a href="#products-section" class="btn" onclick="renderProducts('capsula-mundial')">Ver Cápsula Mundial</a>
                     </div>
                 </div>
                 <div class="slide">
@@ -898,7 +898,7 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
 
         <!-- Filtros de productos -->
         <div class="product-filters">
-            <button class="filter-btn active" data-filter="coleccion">Cápsula Mundial</button>
+            <button class="filter-btn active" data-filter="capsula-mundial">Cápsula Mundial</button>
             <button class="filter-btn" data-filter="liquidacion">Liquidación</button>
             <button class="filter-btn" data-filter="all">Todos</button>
         </div>
@@ -1223,24 +1223,31 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
                 .map(t => t.trim())
                 .filter(Boolean);
 
-            product.stock = parseInt(product.stock) || 0;
-            product.category = (product.categoria || 'coleccion').toLowerCase();
+                        product.stock = parseInt(product.stock) || 0;
+            const rawCategory = (product.categoria || 'Cápsula Mundial').trim().toLowerCase();
+            const normalizedCategory = rawCategory
+                .normalize('NFD')
+                .replace(/[̀-ͯ]/g, '')
+                .replace(/\s+/g, ' ')
+                .trim();
 
-            // Validar categoría
-            if (!['coleccion', 'liquidacion'].includes(product.category)) {
-                product.category = 'coleccion';
-            }
+            const categoryMap = {
+                'capsula mundial': 'capsula-mundial',
+                'cápsula mundial': 'capsula-mundial',
+                'capsulamundial': 'capsula-mundial',
+                'cápsulamundial': 'capsula-mundial',
+                'coleccion': 'capsula-mundial',
+                'colección': 'capsula-mundial',
+                'liquidacion': 'liquidacion',
+                'liquidación': 'liquidacion'
+            };
 
-            productsData.push(product);
+            product.category = categoryMap[normalizedCategory] || 'capsula-mundial';
+productsData.push(product);
         }
 
         products = productsData;
-        renderProducts();
-        // ... (código anterior) ...
-
-        products = productsData;
-        renderProducts('coleccion'); // Renderizar la categoría "Colección" por defecto
-        // renderLiquidacion(); // Esta línea debe estar eliminada
+        renderProducts('capsula-mundial'); // Renderizar la categoría "Cápsula Mundial" por defecto
         loadingProductsMessage.style.display = 'none';
 
     } catch (error) {
