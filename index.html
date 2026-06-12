@@ -159,14 +159,14 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
 
         /* Hero Slider */
         .hero-slider {
-            margin-top: 80px;
+            margin-top: 50px;
             overflow: hidden;
             position: relative;
-            height: 70vh;
+            height: 72vh;
             background-color: var(--white);
             border-radius: var(--border-radius-soft);
             box-shadow: 0 4px 12px var(--shadow-light);
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .slider-wrapper {
@@ -179,14 +179,14 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
             flex: 0 0 100%;
             display: flex;
             align-items: center;
-            padding: 40px 60px;
+            padding: 30px 40px;
             box-sizing: border-box;
-            gap: 50px; /* espacio entre texto e imagen */
-            }
+            gap: 30px; /* espacio entre texto e imagen */
+        }
 
 
         .slide-content {
-            flex: 1;
+            flex: 0.9;
             padding-right: 20px;
             text-align: left;
         }
@@ -205,11 +205,11 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
         }
 
         .slide-image {
-            flex: 1;
+            flex: 1.1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-left: 20px;
+            padding-left: 10px;
         }
 
         .slide-image img {
@@ -322,7 +322,7 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
         .size-chart-section .size-chart-inner {
             display: grid;
             grid-template-columns: minmax(260px, 1.4fr) minmax(260px, 1fr);
-            align-items: start;
+            align-items: stretch; /* que ambos lados tengan la misma altura */
             gap: 40px;
             max-width: 1100px;
             margin: 0 auto;
@@ -351,11 +351,13 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
             overflow: hidden;
             box-shadow: 0 4px 12px var(--shadow-light);
             margin: 0 auto;
+            align-self: stretch; /* estira la caja para igualar la altura de la tabla */
+            display: flex;
         }
 
         .size-chart-section .size-chart-image img {
             width: 100%;
-            height: auto;
+            height: 100%; /* ajustar altura para coincidir con la tabla */
             display: block;
             object-fit: cover;
         }
@@ -363,7 +365,7 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
         .size-chart-section table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 8px; /* menos margen superior */
         }
 
         .size-chart-section th,
@@ -857,12 +859,12 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
                 <div class="slide">
                     <div class="slide-image">
                         <!-- CAMBIAR A LAS URLS RAW DE GITHUB -->
-                        <img src="https://raw.githubusercontent.com/fueradeserieconsultas/fuerads/main/img/Armeniaamarillahome.jpg" alt="Colección Exclusiva">
+                        <img src="https://raw.githubusercontent.com/fueradeserieconsultas/fuerads/main/img/paisesbajoshome.jpg" alt="Moda Sustentable">
                     </div>
                     <div class="slide-content">
-                        <h2>Diseños Únicos, sentite identificado con un lugar en el mundo</h2>
-                        <p>Cada prenda de Fuera de Serie es una obra de arte. Materiales seleccionados y acabados perfectos para un look distinguido.</p>
-                        <a href="#products-section" class="btn">Ver Novedades</a>
+                        <h2>La pasión se lleva puesta</h2>
+                        <p>Ya llegó nuestra nueva colección de remeras inspiradas en el Mundial. Elegí la tuya y llevá el fútbol a todos lados.</p>
+                        <a href="#products-section" class="btn" onclick="renderProducts('cápsulamundial')">Ver Cápsula Mundial</a>
                     </div>
                 </div>
                 <div class="slide">
@@ -879,12 +881,12 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
                 <div class="slide">
                     <div class="slide-image">
                         <!-- CAMBIAR A LAS URLS RAW DE GITHUB -->
-                        <img src="https://raw.githubusercontent.com/fueradeserieconsultas/fuerads/main/img/paisesbajoshome.jpg" alt="Moda Sustentable">
+                        <img src="https://raw.githubusercontent.com/fueradeserieconsultas/fuerads/main/img/Armeniaamarillahome.jpg" alt="Colección Exclusiva">
                     </div>
                     <div class="slide-content">
-                        <h2>Sé un fuera de serie</h2>
-                        <p>En Fuera de Serie, la moda y la originalidad van de la mano. Prendas que viajan por el mundo con sus diseños. Elegí tu remera y te la enviamos donde estes!</p>
-                        <a href="#contact-section" class="btn">Contacto</a>
+                        <h2>Diseños Únicos, sentite identificado con un lugar en el mundo</h2>
+                        <p>Cada prenda de Fuera de Serie es una obra de arte. Materiales seleccionados y acabados perfectos para un look distinguido.</p>
+                        <a href="#products-section" class="btn">Ver Novedades</a>
                     </div>
                 </div>
             </div>
@@ -922,23 +924,43 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
                         <tbody>
                             <tr>
                                 <td>S</td>
-                                <td>48 cm</td>
-                                <td>68 cm</td>
+                                <td>47 cm</td>
+                                <td>66 cm</td>
                             </tr>
                             <tr>
                                 <td>M</td>
+                                <td>49 cm</td>
+                                <td>68 cm</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
                                 <td>51 cm</td>
                                 <td>70 cm</td>
                             </tr>
                             <tr>
-                                <td>L</td>
-                                <td>54 cm</td>
+                                <td>XL</td>
+                                <td>53 cm</td>
                                 <td>72 cm</td>
                             </tr>
                             <tr>
-                                <td>XL</td>
-                                <td>57 cm</td>
+                                <td>XXL</td>
+                                <td>55 cm</td>
                                 <td>74 cm</td>
+                            </tr>
+                            <tr>
+                                <td>S female</td>
+                                <td>40 cm</td>
+                                <td>58 cm</td>
+                            </tr>
+                             <tr>
+                                <td>Croptop</td>
+                                <td>42 cm</td>
+                                <td>42 cm</td>
+                            </tr>
+                             <tr>
+                                <td>OVERSIZE</td>
+                                <td>58 cm</td>
+                                <td>72 cm</td>
                             </tr>
                         </tbody>
                     </table>
