@@ -386,6 +386,58 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
             background-color: #fbfbfb;
         }
 
+        .size-chart-slider {
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .size-chart-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .size-chart-slide.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+
+        .size-chart-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(39, 90, 122, 0.88);
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .size-chart-arrow.left {
+            left: 15px;
+        }
+
+        .size-chart-arrow.right {
+            right: 15px;
+        }
+
+        .size-chart-arrow:hover {
+            background-color: rgba(26, 66, 91, 0.95);
+        }
+
 
         .product-grid {
             display: grid;
@@ -909,65 +961,121 @@ connect-src 'self' https://docs.google.com https://*.googleusercontent.com https
     </div>
 </section>
         <section id="size-chart-section" class="size-chart-section container">
-            <div class="size-chart-inner">
-                <div>
-                    <h2>Tabla de talles</h2>
-                    <p>Consultá nuestra guía de talles para encontrar la medida ideal. Las tablas te ayudan a elegir con confianza antes de confirmar tu pedido.</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Talle</th>
-                                <th>Ancho</th>
-                                <th>Largo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>S</td>
-                                <td>47 cm</td>
-                                <td>66 cm</td>
-                            </tr>
-                            <tr>
-                                <td>M</td>
-                                <td>49 cm</td>
-                                <td>68 cm</td>
-                            </tr>
-                            <tr>
-                                <td>L</td>
-                                <td>51 cm</td>
-                                <td>70 cm</td>
-                            </tr>
-                            <tr>
-                                <td>XL</td>
-                                <td>53 cm</td>
-                                <td>72 cm</td>
-                            </tr>
-                            <tr>
-                                <td>XXL</td>
-                                <td>55 cm</td>
-                                <td>74 cm</td>
-                            </tr>
-                            <tr>
-                                <td>S female</td>
-                                <td>40 cm</td>
-                                <td>58 cm</td>
-                            </tr>
-                             <tr>
-                                <td>Croptop</td>
-                                <td>42 cm</td>
-                                <td>42 cm</td>
-                            </tr>
-                             <tr>
-                                <td>OVERSIZE</td>
-                                <td>58 cm</td>
-                                <td>72 cm</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="size-chart-slider">
+                <div class="size-chart-slide active" data-slide="0">
+                    <div class="size-chart-inner">
+                        <div>
+                            <h2>Tabla de Remeras</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Talle</th>
+                                        <th>Ancho</th>
+                                        <th>Largo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>S</td>
+                                        <td>47 cm</td>
+                                        <td>66 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M</td>
+                                        <td>49 cm</td>
+                                        <td>68 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>L</td>
+                                        <td>51 cm</td>
+                                        <td>70 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XL</td>
+                                        <td>53 cm</td>
+                                        <td>72 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XXL</td>
+                                        <td>55 cm</td>
+                                        <td>74 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>S female</td>
+                                        <td>40 cm</td>
+                                        <td>58 cm</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Croptop</td>
+                                        <td>42 cm</td>
+                                        <td>42 cm</td>
+                                    </tr>
+                                     <tr>
+                                        <td>OVERSIZE</td>
+                                        <td>58 cm</td>
+                                        <td>72 cm</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="size-chart-image">
+                            <img src="img/paisesbajoshome.jpg" alt="Tabla de talles - ejemplo de prenda">
+                        </div>
+                    </div>
                 </div>
-                <div class="size-chart-image">
-                    <img src="img/paisesbajoshome.jpg" alt="Tabla de talles - ejemplo de prenda">
+                <div class="size-chart-slide" data-slide="1">
+                    <div class="size-chart-inner">
+                        <div>
+                            <h2>Tabla de buzos</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Talle</th>
+                                        <th>Ancho</th>
+                                        <th>Largo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>S</td>
+                                        <td>47 cm</td>
+                                        <td>66 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M</td>
+                                        <td>49 cm</td>
+                                        <td>68 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>L</td>
+                                        <td>51 cm</td>
+                                        <td>70 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XL</td>
+                                        <td>53 cm</td>
+                                        <td>72 cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XXL</td>
+                                        <td>55 cm</td>
+                                        <td>74 cm</td>
+                                    </tr>
+                                        <tr>
+                                        <td>OVERSIZE</td>
+                                        <td>58 cm</td>
+                                        <td>72 cm</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="size-chart-image">
+                            <img src="img/paisesbajoshome.jpg" alt="Tabla de talles - ejemplo de prenda">
+                        </div>
+                    </div>
                 </div>
+                <button class="size-chart-arrow left" type="button" aria-label="Anterior">‹</button>
+                <button class="size-chart-arrow right" type="button" aria-label="Siguiente">›</button>
             </div>
         </section>
         <section class="order-summary-section">
@@ -1618,6 +1726,25 @@ whatsappFloatBtn.addEventListener('click', (event) => {
 
 // La función updateWhatsAppLinks() será llamada en DOMContentLoaded
 
+function initSizeChartSlider() {
+    const slider = document.querySelector('.size-chart-slider');
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.size-chart-slide');
+    const prevBtn = slider.querySelector('.size-chart-arrow.left');
+    const nextBtn = slider.querySelector('.size-chart-arrow.right');
+    let activeIndex = 0;
+
+    const showSlide = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, idx) => {
+            slide.classList.toggle('active', idx === activeIndex);
+        });
+    };
+
+    prevBtn?.addEventListener('click', () => showSlide(activeIndex - 1));
+    nextBtn?.addEventListener('click', () => showSlide(activeIndex + 1));
+}
 
         // --- Botón Volver Arriba ---
         scrollToTopBtn.addEventListener('click', () => {
@@ -1646,6 +1773,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // 5. Inicializar WhatsApp links
         updateWhatsAppLinks();
+
+        // 6. Inicializar slider de talles
+        initSizeChartSlider();
 
         console.log('🎉 Aplicación inicializada correctamente');
     } catch (error) {
